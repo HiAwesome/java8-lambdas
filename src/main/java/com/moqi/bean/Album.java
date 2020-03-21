@@ -19,17 +19,17 @@ public class Album {
     /**
      * 专辑名（例如《左轮手枪》）
      */
-    private String name;
+    private final String name;
 
     /**
      * 专辑上所有曲目的列表。
      */
-    private List<Track> tracks;
+    private final List<Track> tracks;
 
     /**
      * 参与创作本专辑的艺术家列表。
      */
-    private List<Artist> musicians;
+    private final List<Artist> musicians;
 
     public Album(String name, List<Track> tracks, List<Artist> musicians) {
         Objects.requireNonNull(name);

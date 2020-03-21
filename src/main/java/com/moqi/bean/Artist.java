@@ -14,7 +14,6 @@ import static java.util.stream.Collectors.toList;
  * @author moqi
  * On 3/21/20 16:04
  */
-
 public class Artist {
 
     /**
