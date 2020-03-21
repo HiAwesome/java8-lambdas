@@ -99,7 +99,8 @@ public class C02P30LambdaExercises {
     }
 
     /**
-     * 不能，重载丢失了泛型信息?
+     * 不能通过
+     * lambda 表达式可以推断为 IntPred 或 Predicate <Integer>，因此重载是模棱两可的。
      */
     @Test
     public void _3c() {
