@@ -79,6 +79,9 @@ public class C2P022 {
         // END all_lambda_forms
     }
 
+    /**
+     * 匿名内部类中使用 final 局部变量
+     */
     public void firstLambda5() {
         JButton button = new JButton();
         // BEGIN variable_capture1
@@ -91,6 +94,9 @@ public class C2P022 {
         // END variable_capture1
     }
 
+    /**
+     * Lambda 表达式中引用既成事实上的 final 变量
+     */
     public void firstLambda6() {
         JButton button = new JButton();
         // BEGIN variable_capture2
@@ -99,6 +105,25 @@ public class C2P022 {
         // END variable_capture2
     }
 
+    /**
+     * Lambda 表达式中引用既成事实上的 final 变量
+     * 未使用既成事实上的 final 变量，导致无法通过编译
+     */
+    @Test
+    public void firstLambda7() {
+        JButton button = new JButton();
+        // BEGIN variable_capture2
+        String name = getUserName();
+        // 对 name 二次赋值，导致编译出错
+        name = "123";
+        // Error:(118, 70) java: local variables referenced from a lambda expression must be final or effectively final
+        // button.addActionListener(event -> System.out.println("hi " + name));
+        // END variable_capture2
+    }
+
+    /**
+     * 使用菱形操作符，根据变量类型做推断
+     */
     public void diamondInference() {
         // BEGIN diamond_inference
         Map<String, Integer> oldWordCounts = new HashMap<String, Integer>(); // <1>
@@ -106,6 +131,9 @@ public class C2P022 {
         // END diamond_inference
     }
 
+    /**
+     * 使用菱形操作符，根据方法签名做推断
+     */
     public void diamondInferenceMethod() {
         // BEGIN diamond_inference_method
         useHashmap(new HashMap<>());
@@ -127,12 +155,18 @@ public class C2P022 {
         // END bifunction_declaration
     }
 
+    /**
+     * 类型推断
+     */
     public void typeInferenceExamples() {
         // BEGIN type_inference_examples
         Predicate<Integer> atLeast5 = x -> x > 5;
         // END type_inference_examples
     }
 
+    /**
+     * 略显复杂的类型推断
+     */
     public void typeInferenceExamples2() {
         // BEGIN type_inference_examples2
         BinaryOperator<Long> addLongs = (x, y) -> x + y;
