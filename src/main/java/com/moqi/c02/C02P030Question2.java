@@ -6,6 +6,7 @@ import java.text.SimpleDateFormat;
 public class C02P030Question2 {
 
     private static final String DD_MMM_YYYY = "dd-MMM-yyyy";
+
     /**
      * ThreadLocalLambda表达式。Java有一个ThreadLocal类，作为容器保存了当前线程里局部变量的值。
      * Java8为该类新加了一个工厂方法，接受一个Lambda表达式，并产生一个新的ThreadLocal对象，
