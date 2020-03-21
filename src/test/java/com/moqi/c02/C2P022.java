@@ -18,6 +18,9 @@ import java.util.function.Predicate;
 
 public class C2P022 {
 
+    /**
+     * 使用匿名内部类将行为和按钮单击进行关联
+     */
     public void firstLambda1() {
         JButton button = new JButton();
         // BEGIN lambda_button_class
@@ -29,6 +32,9 @@ public class C2P022 {
         // END lambda_button_class
     }
 
+    /**
+     * 使用匿名内部类将行为和按钮单击进行关联，使用 Lambda
+     */
     public void firstLambda2() {
         JButton button = new JButton();
         // BEGIN lambda_button_lambda
@@ -36,6 +42,9 @@ public class C2P022 {
         // END lambda_button_lambda
     }
 
+    /**
+     * 使用匿名内部类将行为和按钮单击进行关联，使用 Lambda 且参数声明类型
+     */
     public void firstLambda3() {
         JButton button = new JButton();
         // BEGIN lambda_button_lambda2
@@ -45,19 +54,27 @@ public class C2P022 {
         // END lambda_button_lambda2
     }
 
+    /**
+     * 编写 Lambda 表达式的不同形式
+     */
     public void allLambdaForms() {
         // BEGIN all_lambda_forms
+        // 无参数
         Runnable noArguments = () -> System.out.println("Hello World"); // <1>
 
+        // 单参数
         ActionListener oneArgument = event -> System.out.println("button clicked"); // <2>
 
+        // 无参数，多语句
         Runnable multiStatement = () -> { // <3>
             System.out.print("Hello");
             System.out.println(" World");
         };
 
+        // 多参数，不声明类型
         BinaryOperator<Long> add = (x, y) -> x + y; // <4>
 
+        // 多参数，声明类型
         BinaryOperator<Long> addExplicit = (Long x, Long y) -> x + y; // <5>
         // END all_lambda_forms
     }
