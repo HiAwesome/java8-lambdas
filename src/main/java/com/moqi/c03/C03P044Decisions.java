@@ -13,6 +13,9 @@ import static java.util.stream.Collectors.toSet;
 
 public class C03P044Decisions {
 
+    /**
+     * 符合 Stream 使用习惯的链式调用
+     */
     public Set<String> originsOfBands(Album album) {
         // BEGIN origins_of_bands
         // END origins_of_bands
@@ -22,6 +25,10 @@ public class C03P044Decisions {
                 .collect(toSet());
     }
 
+    /**
+     * 误用 Stream 的例子
+     * 每一步强制对函数求值，而不是将所有的方法调用链接在一起
+     */
     public Set<String> originsOfBandsMisuse(Album album) {
         // BEGIN misuse
         List<Artist> musicians = album.getMusicians()
