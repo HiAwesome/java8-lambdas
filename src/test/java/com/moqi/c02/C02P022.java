@@ -16,7 +16,7 @@ import java.util.function.Predicate;
  * On 3/21/20 16:13
  */
 
-public class C2P022 {
+public class C02P022 {
 
     /**
      * 使用匿名内部类将行为和按钮单击进行关联
