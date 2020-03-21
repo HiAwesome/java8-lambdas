@@ -99,7 +99,7 @@ public class C02P30LambdaExercises {
     }
 
     /**
-     * 不能，重载丢失了泛型信息。
+     * 不能，重载丢失了泛型信息?
      */
     @Test
     public void _3c() {
