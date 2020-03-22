@@ -1,6 +1,6 @@
 package com.moqi.c08;
 
-import com.moqi.c08.SingleResponsibilityPrinciple.*;
+import com.moqi.c08.C08P124SingleResponsibilityPrinciple.*;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
@@ -12,11 +12,11 @@ import static groovy.util.GroovyTestCase.assertEquals;
 import static org.junit.runners.Parameterized.Parameters;
 
 @RunWith(Parameterized.class)
-public class SingleResponsibilityPrincipleTest {
+public class C08P124SingleResponsibilityPrincipleTest {
 
     private final PrimeCounter primeCounter;
 
-    public SingleResponsibilityPrincipleTest(PrimeCounter primeCounter) {
+    public C08P124SingleResponsibilityPrincipleTest(PrimeCounter primeCounter) {
         this.primeCounter = primeCounter;
     }
 
