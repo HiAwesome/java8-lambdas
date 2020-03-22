@@ -15,7 +15,7 @@ public class C09P147ArtistAnalyzerTest {
 
     @Parameterized.Parameters
     public static Collection<Object[]> data() {
-        C09P140FakeLookupService lookupService = new C09P140FakeLookupService();
+        C09P147FakeLookupService lookupService = new C09P147FakeLookupService();
         Object[][] data = new Object[][] {
             { new C09P147CallbackArtistAnalyser(lookupService::lookupArtistName) },
             { new C09P147CompletableFutureArtistAnalyser(lookupService::lookupArtistName) },

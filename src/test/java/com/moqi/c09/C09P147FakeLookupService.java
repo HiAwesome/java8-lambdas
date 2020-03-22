@@ -3,7 +3,7 @@ package com.moqi.c09;
 import com.moqi.bean.Artist;
 import com.moqi.bean.SampleData;
 
-public class C09P140FakeLookupService {
+public class C09P147FakeLookupService {
 
     public Artist lookupArtistName(String name) {
         sleepToSimulateLookupLatency();

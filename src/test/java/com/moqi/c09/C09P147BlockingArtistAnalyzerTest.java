@@ -7,7 +7,7 @@ import static org.junit.Assert.assertTrue;
 
 public class C09P147BlockingArtistAnalyzerTest {
 
-    private final C09P147BlockingArtistAnalyzer analyser = new C09P147BlockingArtistAnalyzer(new C09P140FakeLookupService()::lookupArtistName);
+    private final C09P147BlockingArtistAnalyzer analyser = new C09P147BlockingArtistAnalyzer(new C09P147FakeLookupService()::lookupArtistName);
 
     @Test
     public void largerGroupsAreLarger() {
@@ -15,7 +15,7 @@ public class C09P147BlockingArtistAnalyzerTest {
     }
 
     @Test
-    public void smallerGroupsArentLarger() {
+    public void smallerGroupsAreNotLarger() {
         assertFalse(analyser.isLargerGroup("John Coltrane", "The Beatles"));
     }
 
