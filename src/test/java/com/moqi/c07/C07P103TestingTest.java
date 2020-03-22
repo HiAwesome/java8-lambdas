@@ -57,12 +57,15 @@ public class C07P103TestingTest {
     @Test
     public void mockitoLambdas() {
         // BEGIN mockito_lambdas
-        List<String> list = mock(List.class);
+        //noinspection unchecked
+        List<Integer> list = mock(List.class);
 
+        // 当执行 list.size() 时，取 otherList.size() 的结果
         when(list.size()).thenAnswer(inv -> otherList.size());
 
         assertEquals(3, list.size());
 
+        // 当执行 list.toString() 时，取 otherList.toString() 的结果
         when(list.toString()).thenAnswer(str -> otherList.toString());
 
         assertEquals("[1, 2, 3]", list.toString());
