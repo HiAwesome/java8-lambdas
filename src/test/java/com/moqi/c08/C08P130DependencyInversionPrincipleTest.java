@@ -12,18 +12,18 @@ import static java.util.Arrays.asList;
 import static org.junit.Assert.assertEquals;
 
 @RunWith(Parameterized.class)
-public class DependencyInversionPrincipleTest {
+public class C08P130DependencyInversionPrincipleTest {
 
 
-    private final DependencyInversionPrinciple.HeadingFinder finder;
+    private final C08P130DependencyInversionPrinciple.HeadingFinder finder;
 
-    public DependencyInversionPrincipleTest(DependencyInversionPrinciple.HeadingFinder finder) {
+    public C08P130DependencyInversionPrincipleTest(C08P130DependencyInversionPrinciple.HeadingFinder finder) {
         this.finder = finder;
     }
 
     @Parameterized.Parameters
     public static Collection<Object[]> data() {
-        Object[][] data = new Object[][]{{new DependencyInversionPrinciple.NoDIP()}, {new DependencyInversionPrinciple.ExtractedDIP()}};
+        Object[][] data = new Object[][]{{new C08P130DependencyInversionPrinciple.NoDIP()}, {new C08P130DependencyInversionPrinciple.ExtractedDIP()}};
         return asList(data);
     }
 
