@@ -55,6 +55,9 @@ public class C07P103Testing {
     }
     // END firstToUpperCase_reference
 
+    /**
+     * 记录中间值，以便调试 for 循环
+     */
     public static Set<String> imperativeNationalityReport(Album album) {
         // BEGIN imperative_nationality_report
         Set<String> nationalities = new HashSet<>();
@@ -69,6 +72,11 @@ public class C07P103Testing {
         // END imperative_nationality_report
     }
 
+    /**
+     * 使用 forEach 记录中间值，这种方式有点幼稚
+     * 现在可以使用 forEach 方法打印出流中的值，这同时会触发求值过程。但是这样的操作有个缺点：
+     * 我们无法再继续操作流了，流只能使用一次。如果我们还想继续，必须重新创建流。
+     */
     public static Set<String> forEachLoggingFailure(Album album) {
         // BEGIN foreach_logging_nationality_report
         album.getMusicians()
@@ -85,6 +93,9 @@ public class C07P103Testing {
         return nationalities;
     }
 
+    /**
+     * 使用 peek 方法记录中间值
+     */
     public static Set<String> nationalityReportUsingPeek(Album album) {
         // BEGIN peek_nationality_report
         Set<String> nationalities
