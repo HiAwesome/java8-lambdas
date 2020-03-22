@@ -42,6 +42,9 @@ public class C06P088ArraySum {
                 .collect(toList());
     }
 
+    /**
+     * 串行化计算专辑曲目长度
+     */
     @Benchmark
     // BEGIN serial
     public int serialArraySum() {
@@ -52,6 +55,9 @@ public class C06P088ArraySum {
     }
     // END serial
 
+    /**
+     * 并行化计算专辑曲目长度
+     */
     @Benchmark
     // BEGIN parallel
     public int parallelArraySum() {
