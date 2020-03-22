@@ -16,6 +16,9 @@ public class C07P103TestingTest {
     private final List<Integer> otherList = Arrays.asList(1, 2, 3);
     // END to_uppercase
 
+    /**
+     * 测试大写转换
+     */
     // BEGIN to_uppercase
     @Test
     public void multipleWordsToUppercase() {
@@ -25,6 +28,9 @@ public class C07P103TestingTest {
     }
     // END twoLetterStringConvertedToUppercaseLambdas
 
+    /**
+     * 测试字符串包含两个字符的情况，第一个字母被转换为大写
+     */
     // BEGIN twoLetterStringConvertedToUppercaseLambdas
     @Test
     public void twoLetterStringConvertedToUppercaseLambdas() {
@@ -34,6 +40,9 @@ public class C07P103TestingTest {
     }
     // END twoLetterStringConvertedToUppercase
 
+    /**
+     * 测试单独的方法
+     */
     // BEGIN twoLetterStringConvertedToUppercase
     @Test
     public void twoLetterStringConvertedToUppercase() {
@@ -42,6 +51,9 @@ public class C07P103TestingTest {
         assertEquals("Ab", result);
     }
 
+    /**
+     * 结合 Mockito 框架使用 Lambda 表达式
+     */
     @Test
     public void mockitoLambdas() {
         // BEGIN mockito_lambdas
@@ -50,6 +62,10 @@ public class C07P103TestingTest {
         when(list.size()).thenAnswer(inv -> otherList.size());
 
         assertEquals(3, list.size());
+
+        when(list.toString()).thenAnswer(str -> otherList.toString());
+
+        assertEquals("[1, 2, 3]", list.toString());
         // END mockito_lambdas
     }
 

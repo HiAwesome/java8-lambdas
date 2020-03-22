@@ -25,6 +25,9 @@ public class C07P103Testing {
     }
     // END to_uppercase
 
+    /**
+     * 将列表中元素的第一个字母转换成大写
+     */
     // BEGIN firstToUpperCase_lambda
     public static List<String> elementFirstToUpperCaseLambdas(List<String> words) {
         return words.stream()
@@ -36,6 +39,9 @@ public class C07P103Testing {
     }
     // END firstToUpperCase_lambda
 
+    /**
+     * 将首字母转换为大写，应用到所有列表元素
+     */
     // BEGIN firstToUpperCase_reference
     public static List<String> elementFirstToUppercase(List<String> words) {
         return words.stream()
