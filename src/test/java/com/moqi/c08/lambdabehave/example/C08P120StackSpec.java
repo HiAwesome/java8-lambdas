@@ -2,7 +2,7 @@ package com.moqi.c08.lambdabehave.example;
 
 import java.util.Stack;
 
-import static com.moqi.c08.lambdabehave.Lets.describe;
+import static com.moqi.c08.lambdabehave.C08P120Lets.describe;
 
 /**
  * 描述 stack 的案例

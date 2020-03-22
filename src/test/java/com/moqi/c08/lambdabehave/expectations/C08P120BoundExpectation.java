@@ -2,11 +2,11 @@ package com.moqi.c08.lambdabehave.expectations;
 
 import static org.junit.Assert.assertEquals;
 
-public class BoundExpectation {
+public class C08P120BoundExpectation {
 
     private final Object objectUnderTest;
 
-    public BoundExpectation(Object value) {
+    public C08P120BoundExpectation(Object value) {
         this.objectUnderTest = value;
     }
     

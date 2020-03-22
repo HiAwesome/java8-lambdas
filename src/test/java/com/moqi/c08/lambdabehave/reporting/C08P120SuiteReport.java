@@ -4,21 +4,21 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Stream;
 
-public final class SuiteReport {
+public final class C08P120SuiteReport {
 
     private final String name;
-    private final List<SpecificationReport> specifications;
+    private final List<C08P120SpecificationReport> specifications;
 
-    public SuiteReport(String name) {
+    public C08P120SuiteReport(String name) {
         this.name = name;
         specifications = new ArrayList<>();
     }
 
-    public void add(SpecificationReport specification) {
+    public void add(C08P120SpecificationReport specification) {
         specifications.add(specification);
     }
 
-    public Stream<SpecificationReport> specifications() {
+    public Stream<C08P120SpecificationReport> specifications() {
         return specifications.stream();
     }
 

@@ -1,6 +1,6 @@
 package com.moqi.c08.lambdabehave.reporting;
 
-public enum Result {
+public enum C08P120Result {
     SUCCESS,
     ERROR,
     FAILURE

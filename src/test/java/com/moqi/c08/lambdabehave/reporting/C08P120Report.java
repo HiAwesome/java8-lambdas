@@ -4,22 +4,22 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Stream;
 
-public final class Report {
+public final class C08P120Report {
 
-    private final List<SuiteReport> suites;
+    private final List<C08P120SuiteReport> suites;
 
-    private SuiteReport currentSuite;
+    private C08P120SuiteReport currentSuite;
 
-    public Report() {
+    public C08P120Report() {
         suites = new ArrayList<>();
     }
 
     private void newSuite(String name) {
-        currentSuite = new SuiteReport(name);
+        currentSuite = new C08P120SuiteReport(name);
         suites.add(currentSuite);
     }
 
-    public void newSpecification(String suiteName, SpecificationReport report) {
+    public void newSpecification(String suiteName, C08P120SpecificationReport report) {
         if (noSuite() || seenNewSuite(suiteName)) {
             newSuite(suiteName);
         }
@@ -34,7 +34,7 @@ public final class Report {
         return currentSuite == null;
     }
 
-    public Stream<SuiteReport> suites() {
+    public Stream<C08P120SuiteReport> suites() {
         return suites.stream();
     }
 

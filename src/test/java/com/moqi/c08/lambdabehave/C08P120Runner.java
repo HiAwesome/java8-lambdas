@@ -7,10 +7,10 @@ public enum C08P120Runner {
 
     current;
 
-    private final Report report;
+    private final C08P120Report report;
 
     private C08P120Runner() {
-        report = new Report();
+        report = new C08P120Report();
     }
 
     public static void main(String[] args) {
@@ -19,22 +19,22 @@ public enum C08P120Runner {
     }
 
     void recordSuccess(String suite, String specification) {
-        report.newSpecification(suite, new SpecificationReport(specification));
+        report.newSpecification(suite, new C08P120SpecificationReport(specification));
     }
 
     void recordFailure(String suite, String specification, AssertionError cause) {
-        SpecificationReport specificationReport = new SpecificationReport(specification, Result.FAILURE, cause.getMessage());
+        C08P120SpecificationReport specificationReport = new C08P120SpecificationReport(specification, C08P120Result.FAILURE, cause.getMessage());
         report.newSpecification(suite, specificationReport);
     }
 
     void recordError(String suite, String specification, Throwable cause) {
         cause.printStackTrace();
-        SpecificationReport specificationReport = new SpecificationReport(specification, Result.ERROR, cause.getMessage());
+        C08P120SpecificationReport specificationReport = new C08P120SpecificationReport(specification, C08P120Result.ERROR, cause.getMessage());
         report.newSpecification(suite, specificationReport);
     }
 
     private void printReport() {
-        ReportFormatter formatter = new ConsoleFormatter();
+        C08P120ReportFormatter formatter = new C08P120ConsoleFormatter();
         formatter.format(report);
     }
 
