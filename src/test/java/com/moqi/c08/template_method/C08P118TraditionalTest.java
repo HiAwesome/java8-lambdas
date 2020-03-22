@@ -5,7 +5,7 @@ import com.moqi.c08.template_method.traditional.C08P118EmployeeLoanApplication;
 import com.moqi.c08.template_method.traditional.C08P118PersonalLoanApplication;
 import org.junit.Test;
 
-public class TraditionalTest {
+public class C08P118TraditionalTest {
 
     @Test
     public void fitsTogether() throws C08P118ApplicationDenied {
