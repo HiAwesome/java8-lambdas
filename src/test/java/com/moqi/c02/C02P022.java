@@ -173,6 +173,11 @@ public class C02P022 {
         // END type_inference_examples2
     }
 
+    /**
+     * 方法调用
+     * 两个重载方法可供选择 javac 会挑出最具体的类型
+     * 在本例中调用了 String
+     */
     @Test
     public void mostSpecific() {
         // BEGIN most_specific_overload_call
@@ -190,10 +195,15 @@ public class C02P022 {
     }
     // END most_specific_overload
 
+    /**
+     * 另外一个重载方法调用
+     * 两个重载方法可供选择:
+     *
+     */
     @Test
     public void mostSpecificBiFunction() {
 
-        overloadedMethod((x, y) -> x + y);
+        overloadedMethod(Integer::sum);
     }
 
     private void overloadedMethod(BinaryOperator<Integer> lambda) {
