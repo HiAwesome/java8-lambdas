@@ -1,0 +1,12 @@
+package com.moqi.c08.template_method.traditional;
+
+// BEGIN EmployeeLoanApplication
+public class EmployeeLoanApplication extends PersonalLoanApplication {
+
+    @Override
+    protected void checkIncomeHistory() {
+        // They work for us!
+    }
+
+}
+// END EmployeeLoanApplication
