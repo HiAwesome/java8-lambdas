@@ -130,6 +130,9 @@ public class C05P074StringExamples {
         return result;
     }
 
+    /**
+     * reducing 是一种定制收集器的简便方式
+     */
     public static String formatArtistsReducing(List<Artist> artists) {
         // BEGIN reducing
         String result =
