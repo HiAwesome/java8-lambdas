@@ -6,6 +6,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class C04P059TestDefaultSubClassing {
 
+    /**
+     * 在客户代码中使用默认方法
+     */
     // BEGIN parent_default_used
     @Test
     public void parentDefaultUsed() {
@@ -15,6 +18,9 @@ public class C04P059TestDefaultSubClassing {
     }
     // END parent_default_used
 
+    /**
+     * 调用 Child 接口的客户代码
+     */
     // BEGIN child_override_default
     @Test
     public void childOverrideDefault() {
@@ -24,6 +30,9 @@ public class C04P059TestDefaultSubClassing {
     }
     // END child_override_default
 
+    /**
+     * 调用的是类中的具体方法，而不是默认方法
+     */
     // BEGIN concrete_beats_default
     @Test
     public void concreteBeatsDefault() {
@@ -33,6 +42,9 @@ public class C04P059TestDefaultSubClassing {
     }
     // END concrete_beats_default
 
+    /**
+     * 类中重写的方法优先级高于接口中定义的默认方法
+     */
     // BEGIN concrete_beats_closer_default
     @Test
     public void concreteBeatsCloserDefault() {
