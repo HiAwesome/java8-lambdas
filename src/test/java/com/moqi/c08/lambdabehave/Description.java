@@ -15,11 +15,11 @@ public final class Description {
         try {
             Expect expect = new Expect();
             specification.specifyBehaviour(expect);
-            Runner.current.recordSuccess(suite, description);
+            C08P120Runner.current.recordSuccess(suite, description);
         } catch (AssertionError cause) {
-            Runner.current.recordFailure(suite, description, cause);
+            C08P120Runner.current.recordFailure(suite, description, cause);
         } catch (Throwable cause) {
-            Runner.current.recordError(suite, description, cause);
+            C08P120Runner.current.recordError(suite, description, cause);
         }
     }
     // END should

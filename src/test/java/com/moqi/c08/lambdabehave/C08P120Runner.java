@@ -1,20 +1,20 @@
 package com.moqi.c08.lambdabehave;
 
-import com.moqi.c08.lambdabehave.example.StackSpec;
+import com.moqi.c08.lambdabehave.example.C08P120StackSpec;
 import com.moqi.c08.lambdabehave.reporting.*;
 
-public enum Runner {
+public enum C08P120Runner {
 
     current;
 
     private final Report report;
 
-    private Runner() {
+    private C08P120Runner() {
         report = new Report();
     }
 
     public static void main(String[] args) {
-        current.run(StackSpec.class);
+        current.run();
         current.printReport();
     }
 
@@ -38,12 +38,10 @@ public enum Runner {
         formatter.format(report);
     }
 
-    private void run(Class<StackSpec> stackSpecClass) {
+    private void run() {
         try {
-            stackSpecClass.newInstance();
-        } catch (InstantiationException e) {
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
+            C08P120StackSpec.class.newInstance();
+        } catch (InstantiationException | IllegalAccessException e) {
             e.printStackTrace();
         }
     }

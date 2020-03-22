@@ -3,14 +3,14 @@ package com.moqi.c08.template_method.lambdas;
 /**
  * CompanyLoanApplication 类声明了对应的检查方法
  */
-// BEGIN C05P118CompanyLoanApplication
-public class C05P118CompanyLoanApplication extends C05P118LoanApplication {
+// BEGIN C08P118CompanyLoanApplication
+public class C08P118CompanyLoanApplication extends C08P118LoanApplication {
 
-    public C05P118CompanyLoanApplication(C05P118Company company) {
+    public C08P118CompanyLoanApplication(C08P118Company company) {
         super(company::checkIdentity,
               company::checkHistoricalDebt,
               company::checkProfitAndLoss);
     }
 
 }
-// END C05P118CompanyLoanApplication
+// END C08P118CompanyLoanApplication
