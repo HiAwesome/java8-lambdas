@@ -10,18 +10,21 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
-public class FutureAlbumLookup implements AlbumLookup {
+public class C09P140FutureAlbumLookup implements C09P140AlbumLookup {
 
     private static final ExecutorService service = Executors.newFixedThreadPool(2);
 
     private final List<Track> tracks;
     private final List<Artist> artists;
 
-    public FutureAlbumLookup(List<Track> tracks, List<Artist> artists) {
+    public C09P140FutureAlbumLookup(List<Track> tracks, List<Artist> artists) {
         this.tracks = tracks;
         this.artists = artists;
     }
 
+    /**
+     * 使用 Future 从外部网站下载专辑信息
+     */
     // BEGIN lookupByName
     @Override
     public Album lookupByName(String albumName) {

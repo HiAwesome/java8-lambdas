@@ -9,7 +9,7 @@ import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-public class CompletableAlbumLookup implements AlbumLookup {
+public class C09P140CompletableAlbumLookup implements C09P140AlbumLookup {
 
     private static final ExecutorService SERVICE = Executors.newFixedThreadPool(4);
 
@@ -20,11 +20,14 @@ public class CompletableAlbumLookup implements AlbumLookup {
     private Artist artist;
 
 
-    public CompletableAlbumLookup(List<Track> tracks, List<Artist> artists) {
+    public C09P140CompletableAlbumLookup(List<Track> tracks, List<Artist> artists) {
         this.tracks = tracks;
         this.artists = artists;
     }
 
+    /**
+     * 使用 CompletableFuture 从外部网站下载专辑信息
+     */
     // BEGIN lookupByName
     public Album lookupByName(String albumName) {
         CompletableFuture<List<Artist>> artistLookup
@@ -39,16 +42,23 @@ public class CompletableAlbumLookup implements AlbumLookup {
     }
     // END lookupByName
 
+    /**
+     * 异步创建 CompletableFuture 实例的示例代码
+     */
     // BEGIN lookupTrack
     CompletableFuture<Track> lookupTrack(String id) {
         return CompletableFuture.supplyAsync(() -> {
             // Some expensive work is done here <1>
+            // 这里会做一些繁重的工作
             // ...
             return track; // <2>
         }, SERVICE); // <3>
     }
     // END lookupTrack
 
+    /**
+     * 为 Future 提供值
+     */
     // BEGIN createFuture
     CompletableFuture<Artist> createFuture(String id) {
         CompletableFuture<Artist> future = new CompletableFuture<>();
@@ -57,12 +67,18 @@ public class CompletableAlbumLookup implements AlbumLookup {
     }
     // END createFuture
 
+    /**
+     * 为 Future 提供一个值，完成工作
+     */
     private void startJob(CompletableFuture<Artist> future) {
         // BEGIN complete
         future.complete(artist);
         // END complete
     }
 
+    /**
+     * 出现错误时完成 Future
+     */
     private void processExceptionally(CompletableFuture<Album> future, String name) {
         // BEGIN completeExceptionally
         future.completeExceptionally(new AlbumLookupException("Unable to find " + name));

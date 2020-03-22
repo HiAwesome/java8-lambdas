@@ -13,7 +13,7 @@ import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class AlbumLookupTest {
+public class C09P140AlbumLookupTest {
 
     @Test
     public void albumLookedUp() {
@@ -21,12 +21,12 @@ public class AlbumLookupTest {
         List<Track> trackList = album.getTrackList();
         List<Artist> musicianList = album.getMusicianList();
 
-        AlbumLookupFactory completable = CompletableAlbumLookup::new;
-        AlbumLookupFactory future = FutureAlbumLookup::new;
+        AlbumLookupFactory completable = C09P140CompletableAlbumLookup::new;
+        AlbumLookupFactory future = C09P140FutureAlbumLookup::new;
 
         Stream.of(completable, future)
                 .forEach(factory -> {
-                    AlbumLookup lookup = factory.apply(trackList, musicianList);
+                    C09P140AlbumLookup lookup = factory.apply(trackList, musicianList);
                     System.out.println("Testing: " + lookup.getClass().getSimpleName());
                     Album result = lookup.lookupByName(album.getName());
 
@@ -35,7 +35,7 @@ public class AlbumLookupTest {
                 });
     }
 
-    interface AlbumLookupFactory extends BiFunction<List<Track>, List<Artist>, AlbumLookup> {
+    interface AlbumLookupFactory extends BiFunction<List<Track>, List<Artist>, C09P140AlbumLookup> {
 
     }
 
