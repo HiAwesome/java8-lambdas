@@ -6,14 +6,14 @@ import org.junit.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class RxExamplesTest {
+public class C09P144RxExamplesTest {
 
     /**
      * 根据 https://stackoverflow.com/questions/54767187/how-to-avoid-toblocking-in-rxjava-2 重构
      */
     @Test
     public void filtersAlbums() {
-        RxExamples examples = new RxExamples(SampleData.getThreeArtists());
+        C09P144RxExamples examples = new C09P144RxExamples(SampleData.getThreeArtists());
         Artist artist = examples
                 .search("John", "UK", 5)
                 .blockingFirst();

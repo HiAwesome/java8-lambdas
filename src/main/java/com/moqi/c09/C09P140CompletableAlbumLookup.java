@@ -81,14 +81,14 @@ public class C09P140CompletableAlbumLookup implements C09P140AlbumLookup {
      */
     private void processExceptionally(CompletableFuture<Album> future, String name) {
         // BEGIN completeExceptionally
-        future.completeExceptionally(new AlbumLookupException("Unable to find " + name));
+        future.completeExceptionally(new C09P140AlbumLookupException("Unable to find " + name));
         // END completeExceptionally
     }
 
     // ----------------- FAKE LOOKUP METHODS -----------------
     //         Represent API lookup on external services
 
-    private CompletableFuture<List<Artist>> lookupArtists(String albumName, Credentials credentials) {
+    private CompletableFuture<List<Artist>> lookupArtists(String albumName, C09P140Credentials credentials) {
         return CompletableFuture.completedFuture(artists);
     }
 
@@ -100,19 +100,19 @@ public class C09P140CompletableAlbumLookup implements C09P140AlbumLookup {
         }
     }
 
-    private CompletableFuture<List<Track>> lookupTracks(String albumName, Credentials credentials) {
+    private CompletableFuture<List<Track>> lookupTracks(String albumName, C09P140Credentials credentials) {
         return CompletableFuture.supplyAsync(() -> {
             sleep(1000);
             return tracks;
         }, SERVICE);
     }
 
-    private CompletableFuture<Credentials> loginTo(String serviceName) {
+    private CompletableFuture<C09P140Credentials> loginTo(String serviceName) {
         return CompletableFuture.supplyAsync(() -> {
             if ("artist".equals(serviceName)) {
                 sleep(1000);
             }
-            return new Credentials();
+            return new C09P140Credentials();
         }, SERVICE);
     }
 

@@ -6,11 +6,11 @@ import java.util.concurrent.CompletableFuture;
 import java.util.function.Consumer;
 import java.util.function.Function;
 
-public class CompletableFutureArtistAnalyser implements ArtistAnalyzer {
+public class C09P147CompletableFutureArtistAnalyser implements C09P147ArtistAnalyzer {
 
     private final Function<String, Artist> artistLookupService;
 
-    public CompletableFutureArtistAnalyser(Function<String, Artist> artistLookupService) {
+    public C09P147CompletableFutureArtistAnalyser(Function<String, Artist> artistLookupService) {
         this.artistLookupService = artistLookupService;
     }
 

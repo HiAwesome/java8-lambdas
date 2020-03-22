@@ -11,21 +11,21 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import static org.junit.Assert.assertEquals;
 
 @RunWith(Parameterized.class)
-public class ArtistAnalyzerTest {
+public class C09P147ArtistAnalyzerTest {
 
     @Parameterized.Parameters
     public static Collection<Object[]> data() {
-        FakeLookupService lookupService = new FakeLookupService();
+        C09P140FakeLookupService lookupService = new C09P140FakeLookupService();
         Object[][] data = new Object[][] {
-            { new CallbackArtistAnalyser(lookupService::lookupArtistName) },
-            { new CompletableFutureArtistAnalyser(lookupService::lookupArtistName) },
+            { new C09P147CallbackArtistAnalyser(lookupService::lookupArtistName) },
+            { new C09P147CompletableFutureArtistAnalyser(lookupService::lookupArtistName) },
         };
         return Arrays.asList(data);
     }
 
-    private final ArtistAnalyzer analyser;
+    private final C09P147ArtistAnalyzer analyser;
 
-    public ArtistAnalyzerTest(ArtistAnalyzer analyser) {
+    public C09P147ArtistAnalyzerTest(C09P147ArtistAnalyzer analyser) {
         this.analyser = analyser;
     }
 

@@ -5,11 +5,11 @@ import com.moqi.bean.Artist;
 import java.util.function.Consumer;
 import java.util.function.Function;
 
-public class CallbackArtistAnalyser implements ArtistAnalyzer {
+public class C09P147CallbackArtistAnalyser implements C09P147ArtistAnalyzer {
 
     private final Function<String, Artist> artistLookupService;
 
-    public CallbackArtistAnalyser(Function<String, Artist> artistLookupService) {
+    public C09P147CallbackArtistAnalyser(Function<String, Artist> artistLookupService) {
         this.artistLookupService = artistLookupService;
     }
 

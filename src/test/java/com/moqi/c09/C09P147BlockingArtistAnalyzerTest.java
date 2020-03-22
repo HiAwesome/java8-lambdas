@@ -5,9 +5,9 @@ import org.junit.Test;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
-public class BlockingArtistAnalyzerTest {
+public class C09P147BlockingArtistAnalyzerTest {
 
-    private final BlockingArtistAnalyzer analyser = new BlockingArtistAnalyzer(new FakeLookupService()::lookupArtistName);
+    private final C09P147BlockingArtistAnalyzer analyser = new C09P147BlockingArtistAnalyzer(new C09P140FakeLookupService()::lookupArtistName);
 
     @Test
     public void largerGroupsAreLarger() {

@@ -9,18 +9,21 @@ import java.util.List;
 import static java.util.stream.Collectors.toList;
 
 @SuppressWarnings("ALL")
-public class RxExamples {
+public class C09P144RxExamples {
 
     private final List<Artist> savedArtists;
     private final List<String> savedArtistNames;
 
-    public RxExamples(List<Artist> savedArtists) {
+    public C09P144RxExamples(List<Artist> savedArtists) {
         this.savedArtists = savedArtists;
         savedArtistNames = savedArtists.stream()
                 .map(Artist::getName)
                 .collect(toList());
     }
 
+    /**
+     * 通过名字和国籍查找艺术家通过名字和国籍查找艺术家
+     */
     // BEGIN search
     public Observable<Artist> search(String searchedName,
                                      String searchedNationality,

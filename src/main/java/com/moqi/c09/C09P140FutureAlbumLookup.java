@@ -28,8 +28,8 @@ public class C09P140FutureAlbumLookup implements C09P140AlbumLookup {
     // BEGIN lookupByName
     @Override
     public Album lookupByName(String albumName) {
-        Future<Credentials> trackLogin = loginTo("track"); // <1>
-        Future<Credentials> artistLogin = loginTo("artist");
+        Future<C09P140Credentials> trackLogin = loginTo("track"); // <1>
+        Future<C09P140Credentials> artistLogin = loginTo("artist");
 
         try {
             Future<List<Track>> tracks = lookupTracks(albumName, trackLogin.get()); // <2>
@@ -37,7 +37,7 @@ public class C09P140FutureAlbumLookup implements C09P140AlbumLookup {
 
             return new Album(albumName, tracks.get(), artists.get()); // <3>
         } catch (InterruptedException | ExecutionException e) {
-            throw new AlbumLookupException(e.getCause()); // <4>
+            throw new C09P140AlbumLookupException(e.getCause()); // <4>
         }
     }
     // END lookupByName
@@ -45,23 +45,23 @@ public class C09P140FutureAlbumLookup implements C09P140AlbumLookup {
     // ----------------- FAKE LOOKUP METHODS -----------------
     //         Represent API lookup on external services
 
-    private Future<List<Artist>> lookupArtists(String albumName, Credentials credentials) {
+    private Future<List<Artist>> lookupArtists(String albumName, C09P140Credentials credentials) {
         return service.submit(() -> {
             fakeWaitingForExternalWebService();
             return artists;
         });
     }
 
-    private Future<List<Track>> lookupTracks(String albumName, Credentials credentials) {
+    private Future<List<Track>> lookupTracks(String albumName, C09P140Credentials credentials) {
         return service.submit(() -> tracks);
     }
 
-    private Future<Credentials> loginTo(String serviceName) {
+    private Future<C09P140Credentials> loginTo(String serviceName) {
         return service.submit(() -> {
             if ("track".equals(serviceName)) {
                 fakeWaitingForExternalWebService();
             }
-            return new Credentials();
+            return new C09P140Credentials();
         });
     }
 
