@@ -1,6 +1,6 @@
 package com.moqi.c08.template_method.traditional;
 
-public class CompanyLoanApplication extends LoanApplication {
+public class C05P118CompanyLoanApplication extends C05P118LoanApplication {
 
     @Override
     protected void checkIdentity() {
